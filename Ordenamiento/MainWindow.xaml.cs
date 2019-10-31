@@ -40,10 +40,27 @@ namespace Ordenamiento
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var temp = miLista[0];
-
+            /*var temp = miLista[0];
             miLista[0] = miLista[3];
-            miLista[3] = temp;
+            miLista[3] = temp;*/
+
+            int gap, temp, i, j;
+            gap = miLista.Count / 2;
+
+            while(gap > 0)
+            {
+                for(i=0; i<miLista.Count; i++)
+                {
+                    if(miLista[i] > miLista[gap + i])
+                    {
+                        temp = miLista[i];
+                        miLista[i] = miLista[gap + i];
+                        miLista[gap + i] = temp;
+                    }
+                }
+
+                gap--;
+            }
 
         }
     }
