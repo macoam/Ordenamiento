@@ -23,7 +23,5 @@ namespace Ordenamiento
         {
             return this.Nombre + "(" + this.Promedio.ToString() + ")";
         }
-
-
     }
 }

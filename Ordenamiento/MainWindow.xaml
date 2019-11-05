@@ -7,9 +7,21 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <ListBox Name="lstNumeros" HorizontalAlignment="Left" Height="399" Margin="10,10,0,0" VerticalAlignment="Top" Width="188"/>
-        <Button Content="Ordenar Shell" HorizontalAlignment="Left" Margin="215,10,0,0" VerticalAlignment="Top" Width="110" Click="Button_Click"/>
-        <Button Content="Ordenar Bubble" HorizontalAlignment="Left" Margin="215,55,0,0" VerticalAlignment="Top" Width="110" Click="Button_Click_1"/>
+        <ListView x:Name="lstNumeros" HorizontalAlignment="Left" Height="401" Margin="10,10,0,0" VerticalAlignment="Top" Width="379">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Nombre}" Header="Nombre" Width="120"></GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Promedio}" Header="Promedio" Width="120"></GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Faltas}" Header="Faltas" Width="120"></GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="btnOrdenar" Content="Shell" HorizontalAlignment="Left" Margin="447,78,0,0" VerticalAlignment="Top" Width="75" Click="BtnOrdenar_Click"/>
+        <Label Content="Ordenar Promedio" HorizontalAlignment="Left" Margin="433,37,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnBubble" Content="Bubble" HorizontalAlignment="Left" Margin="447,119,0,0" VerticalAlignment="Top" Width="75" Click="BtnBubble_Click"/>
+        <Button x:Name="btnFaltasShell" Content="Shell" HorizontalAlignment="Left" Margin="636,78,0,0" VerticalAlignment="Top" Width="75" Click="BtnFaltasShell_Click"/>
+        <Button x:Name="btnFaltasBubble" Content="Bubble" HorizontalAlignment="Left" Margin="636,119,0,0" VerticalAlignment="Top" Width="75" Click="BtnFaltasBubble_Click"/>
+        <Label Content="Ordenar Faltas" HorizontalAlignment="Left" Margin="636,37,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
